@@ -34,13 +34,13 @@ public class Alg15654 {
 		}
 		
 		Arrays.sort(num);		
-		dfs(0,0);
+		dfs(0);
 		
 		System.out.println(sb);
 				
 	}
 	
-	public static void dfs(int start, int end) {
+	public static void dfs(int start) {
 		if (start == M) {
 			for (int i = 0; i < M; i++) {
 				sb.append(ans[i]).append(" ");
@@ -49,11 +49,11 @@ public class Alg15654 {
 			return;
 		}
 		
-		for (int i = end; i < N; i++) {
+		for (int i = 0; i < N; i++) {
 			if(!visited[i]) {
 				visited[i] = true;
 				ans[start] = num[i];
-				dfs(start+1, end);
+				dfs(start+1);
 				visited[i] = false;
 			}			
 		}
