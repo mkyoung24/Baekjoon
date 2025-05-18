@@ -8,24 +8,24 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		
-		int[] dis = new int[N];
-		int[] city = new int[N+1];
+		long[] dis = new long[N];
+		long[] city = new long[N+1];
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		for (int i = 1; i < N; i++) {
-			dis[i] = Integer.parseInt(st.nextToken());
+			dis[i] = Long.parseLong(st.nextToken());
 		}
 		
 		st = new StringTokenizer(br.readLine());
 		for (int i = 1; i <= N; i++) {
-			city[i] = Integer.parseInt(st.nextToken());
+			city[i] = Long.parseLong(st.nextToken());
 		}
 		
-		int money = 0;
+		long money = 0;
 		
 		while(true) {
 			int count = 1;
-			int d = dis[count];
+			long d = dis[count];
 			for (int i = count + 1; i <= N; i++) {
 				if (i == N) {
 					money += city[count] * d;
